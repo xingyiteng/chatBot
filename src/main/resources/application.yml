@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: chatBot
+  ai:
+    openai:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode # 百炼大模型要去除v1
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: qwen-plus
+logging:
+  level:
+    org.springframework.ai: debug # AI对话的日志级别
+    com.iteng.chatbot: debug # 本项目的日志级别
