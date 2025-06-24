@@ -6,6 +6,10 @@ spring:
     username: root  # 数据库用户名
     password: root  # 数据库密码
     driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 104857600
+      max-request-size: 104857600
   ai:
     openai:
       base-url: https://dashscope.aliyuncs.com/compatible-mode # 百炼大模型要去除v1
@@ -13,6 +17,10 @@ spring:
       chat:
         options:
           model: qwen-plus
+      embedding:
+        options:
+          model: text-embedding-v3
+          dimensions: 1024
 logging:
   level:
     org.springframework.ai: debug # AI对话的日志级别
